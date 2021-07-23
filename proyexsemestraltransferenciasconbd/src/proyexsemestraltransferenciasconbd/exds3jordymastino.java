@@ -47,7 +47,6 @@ public class exds3jordymastino {
 		
 		nombre_recibe= JOptionPane.showInputDialog(null, "Ingrese Nombre del que recibe");
 		
-		
 		int cant_sobre_bl;
 		String sobre_blanco;
 		double costo_sobre_bl=2.75,valor_sobre_bl;
@@ -73,7 +72,6 @@ public class exds3jordymastino {
 		cajas_bultos= JOptionPane.showInputDialog(null, "Ingrese contenido cajas bultos");
 		valor_cajas_b=costo_cajas_b*cant_cajas_b;
 		
-		//float sum_cartas,sum_sobres_am,sum_paquetes,sum_cajas,sum_otros;
 		double cant_dinero;  //cant_dinero
 		String dinero; 
 		
@@ -85,7 +83,6 @@ public class exds3jordymastino {
 		int dine=(int)cant_dinero/100;
 		int aux =((int)cant_dinero-(dine*100));
 		if(aux>=75) {dine+=1;}
-		
 		
 		double costo_dinero=0;  //costo_dinero
 		double flete_dinero;
@@ -121,8 +118,6 @@ public class exds3jordymastino {
 			valor_recargo=(subtotal*porc_recargo_pago);
 			valor_final=subtotal+(valor_recargo);
 		}
-		
-		
 		//preguntar si/no desea ver el reporte
 		
 		int opcion = JOptionPane.showConfirmDialog(null, "Desea ver la factura?",
@@ -142,20 +137,17 @@ public class exds3jordymastino {
 		ax+="\nCantidad\tTipo de Envio\tPrecio\tTotal x Linea";
 		JTextArea salida = new JTextArea();
 		salida.setText(ax);
-		
 		salida.append("\n"+cant_sobre_bl+"\tSobres o Cartas"+costo_sobre_bl+"\t"+valor_sobre_bl);
 		salida.append("\n"+cant_sobre_am+"\tSobres amarillos"+costo_sobre_am+"\t"+valor_sobre_am);
 		salida.append("\n"+cant_cajas_b+"\tcajas o bultos"+costo_cajas_b+"\t"+valor_cajas_b);
 		salida.append("\n"+cant_dinero+"\tEnvio de dinero\t"+flete_dinero+"\t"+(flete_dinero+cant_dinero));
 		salida.append("\n\t\t\t"+formatodin.format(subtotal));
-		
 		salida.append("\nTipo Pago: "+tipo_pago);
 		salida.append("\nSubTotal:\t\t\t\t"+formatodin.format(subtotal));
 		salida.append("\nDescuento:"+formatodin.format(valor_descto));
 		salida.append("\nRecargo:"+formatodin.format(valor_recargo));
 		salida.append("\nValor Final a Pagar\t\t\t\t"+formatodin.format(valor_final));
 		JOptionPane.showMessageDialog(null, salida,"Envíos & Transferencias Global Money, INC.",JOptionPane.INFORMATION_MESSAGE);
-		JOptionPane.showMessageDialog(null, "REGISTRO EXITOSO\n sus datos han sido procesados y almacenados!!!");
 		
 		opcion = JOptionPane.showConfirmDialog(null, "¿Desea seguir viendo la factura anterior?",
 				"Seleccione una Opción", JOptionPane.YES_NO_OPTION);
@@ -166,25 +158,20 @@ public class exds3jordymastino {
 		String username= "root";
 		String password = "";
 		
-		
 		try {
 			Connection connection = DriverManager.getConnection(url, username, password);
         
 		Statement insertreg=connection.createStatement();
 		
-        insertreg.executeUpdate("INSERT INTO tabtransfint(numero_guia, cedula, nombre_cliente, contacto, email,profesion, ag_envia,ag_recibe,nombre_recibe,cant_sobre_bl,sobre_blanco,costo_sobre_bl,valor_sobre_bl,cant_sobre_am,costo_sobre_am,sobre_amarillo,valor_sobre_am,cant_cajas_b,cajas_bultos,costo_cajas_b,valor_cajas_b,cant_dinero,dinero,costo_dinero,flete_dinero,tipo_pago,subtotal,porc_descto_pago,valor_descto,porc_recargo_pago,valor_recargo,valor_final) values ('"+numero_guia + "','"+cedula + "','"+ nombre_cliente +"','"+ contacto+"','"+ email + "','"+ profesion + "','"+ agencia[ag_envia] + "','"+ agencia[ag_recibe] + "','"+ nombre_recibe + "','"+ cant_sobre_bl+ "','" + sobre_blanco+ "','"+ costo_sobre_bl+ "','"+ valor_sobre_bl + "','"+cant_sobre_am+"','"+sobre_amarillo+"','"+costo_sobre_am+"','"+valor_sobre_am+"','"+cant_cajas_b+"','"+cajas_bultos+"','"+costo_cajas_b+"','"+valor_cajas_b+"','"+cant_dinero+"','"+dinero+"','"+costo_dinero+"','"+flete_dinero+"','"+tipo_pago+"','"+subtotal+"','"+porc_descto_pago+"','"+valor_descto+"','"+porc_recargo_pago+"','"+valor_recargo+"','"+ valor_final+"')");
+        insertreg.executeUpdate("INSERT INTO tabtransfint(numero_guia, cedula, nombre_cliente, contacto, email,profesion, ag_envia,ag_recibe,nombre_recibe,cant_sobre_bl,sobre_blanco,costo_sobre_bl,valor_sobre_bl,cant_sobre_am,costo_sobre_am,sobre_amarillo,valor_sobre_am,cant_cajas_b,cajas_bultos,costo_cajas_b,valor_cajas_b,cant_dinero,dinero,costo_dinero,flete_dinero,tipo_pago,subtotal,porc_descto_pago,valor_descto,porc_recargo_pago,valor_recargo,valor_final) values ('"+numero_guia + "','"+cedula + "','"+ nombre_cliente +"','"+ contacto+"','"+ email + "','"+ profesion + "','"+ agencia[ag_envia] + "','"+ agencia[ag_recibe] + "','"+ nombre_recibe + "','"+ cant_sobre_bl+ "','" + sobre_blanco+ "','"+ costo_sobre_bl+ "','"+ valor_sobre_bl + "','"+cant_sobre_am+"','"+costo_sobre_am+"','"+sobre_amarillo+"','"+valor_sobre_am+"','"+cant_cajas_b+"','"+cajas_bultos+"','"+costo_cajas_b+"','"+valor_cajas_b+"','"+cant_dinero+"','"+dinero+"','"+costo_dinero+"','"+flete_dinero+"','"+tipo_pago+"','"+subtotal+"','"+porc_descto_pago+"','"+valor_descto+"','"+porc_recargo_pago+"','"+valor_recargo+"','"+ valor_final+"')");
         
         JOptionPane.showMessageDialog(null, "Registro de Cliente\n"+"Registro Exitoso en la Base de Datos");
 		}catch(SQLException e) {
 			JOptionPane.showMessageDialog(null, "Registro de Cliente\n"+"Registro No Cargado en la Base de Datos");
 			e.printStackTrace();}
 	
-	
-	
 		opcionp = JOptionPane.showConfirmDialog(null, "¿Desea ejecutar la aplicación de nuevo?",
 				"Seleccione una Opción", JOptionPane.YES_NO_OPTION);
 		}
-	}
-	
-	
+	}	
 }
