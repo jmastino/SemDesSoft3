@@ -59,7 +59,7 @@ public class Principal {
 				here.viewTable(connection);
 			} catch(SQLException e){e.printStackTrace();}
 			opcionreporte = JOptionPane.showConfirmDialog(null, "¿Desea Reporte de Todos los Prestamos?",
-					"Seleccione una Opción", JOptionPane.YES_NO_OPTION);
+					"Seleccione una Opción", JOptionPane.YES_NO_OPTION); 
 		}
 		
 			opcion = JOptionPane.showConfirmDialog(null, "Desea seguir ejecutando la Aplicación?",
