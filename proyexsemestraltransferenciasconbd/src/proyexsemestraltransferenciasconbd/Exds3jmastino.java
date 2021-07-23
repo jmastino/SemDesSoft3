@@ -10,7 +10,7 @@ import java.util.Date;
 import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
 
-public class exds3jordymastino {
+public class Exds3jmastino {
 	
 	public static void main(String[] args) {
 		int opcionp = JOptionPane.showConfirmDialog(null, "¿Desea ejecutar la aplicación?",
@@ -130,7 +130,7 @@ public class exds3jordymastino {
 		
 		String ax= "\tEnvíos & Transferencias Global Money, INC.\n\tcomprobante de recibo & envio de transferencias";
 		ax+="\nFactura No. "+numero_guia+"\t Fecha:"+(formatter.format(date));
-		ax+="\nProgramador: Jordy Mastino\t\t\t"+"CÉDULA: 4-781-1309";
+		ax+="\nProgramador: J Mastino\t\t\t"+"CÉDULA: x-xxx-xxxx";
 		ax+="\nCedula:"+cedula+" Nombre: "+nombre_cliente+" Celular:"+contacto+" Email:"+email;
 		ax+="\nAg. Envío:"+agencia[ag_envia]+" Ag. Recibe"+agencia[ag_recibe]+" Nombre que Recibe:"+nombre_recibe;
 		ax+="\n\t\tDetalle del Envío:";
@@ -140,6 +140,7 @@ public class exds3jordymastino {
 		salida.append("\n"+cant_sobre_bl+"\tSobres o Cartas"+costo_sobre_bl+"\t"+valor_sobre_bl);
 		salida.append("\n"+cant_sobre_am+"\tSobres amarillos"+costo_sobre_am+"\t"+valor_sobre_am);
 		salida.append("\n"+cant_cajas_b+"\tcajas o bultos"+costo_cajas_b+"\t"+valor_cajas_b);
+		//salida.append("\n0\tOtros\t0.00\t0.00");
 		salida.append("\n"+cant_dinero+"\tEnvio de dinero\t"+flete_dinero+"\t"+(flete_dinero+cant_dinero));
 		salida.append("\n\t\t\t"+formatodin.format(subtotal));
 		salida.append("\nTipo Pago: "+tipo_pago);
@@ -168,7 +169,7 @@ public class exds3jordymastino {
         JOptionPane.showMessageDialog(null, "Registro de Cliente\n"+"Registro Exitoso en la Base de Datos");
 		}catch(SQLException e) {
 			JOptionPane.showMessageDialog(null, "Registro de Cliente\n"+"Registro No Cargado en la Base de Datos");
-			e.printStackTrace();}
+			e.printStackTrace();}	
 	
 		opcionp = JOptionPane.showConfirmDialog(null, "¿Desea ejecutar la aplicación de nuevo?",
 				"Seleccione una Opción", JOptionPane.YES_NO_OPTION);
